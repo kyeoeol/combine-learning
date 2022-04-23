@@ -132,3 +132,5 @@ extension Subscribers {
 
 5. Publiser가 finite된 경우 Completion 또는 Error를 보낸다.
 <img width="300" src="https://user-images.githubusercontent.com/80438047/164912447-cd7d7112-65f4-4126-b828-f101d57fc21e.png">
+
+**하나의 Subscription으로 0개 또는 그 이상의 값을 받고 하나의 Completion으로 완료된다.**
