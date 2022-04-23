@@ -37,8 +37,13 @@ Combine은 요청 기반의 API이기 때문에 메모리 사용량과 앱의 �
 Publiser는 값과 에러가 생성되는 방식을 설명(describe)하는 Combine의 선언적인 부분(declarative part of Combine's API)이다. <br>
 이는 실제 Publiser가 값과 에러를 생성하는 것이 아니라는 것을 의미한다.
 
-Here's the protocol
-```
+**Fetures**
+- Defines how values and errors are produced
+- Value Type
+- Allows registration of a subscriber
+
+**Protocol**
+```swift
 protocol Publiser {
     associatedtype Output
     associatedtype Failure: Error
@@ -51,6 +56,22 @@ protocol Publiser {
 - Output: 생성되는 값에 대한 associatedtype
 - Failure: 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
 - subscribe: Publiser의 핵심 기능, subscriber의 Input과 Publiser의 Output이 일치해야 하고 각각의 Failure도 일치해야 한다.
+
+**Example**
+```swift
+extension NotificationCenter {
+    struct Publisher: Combine.Publisher {
+        typealias Output = Notification
+        typealias Failure = Never
+        
+        init(center: NotificationCenter, name: Notification.Name, object: Any? = nil)
+    }
+}
+```
+- struct로 사용된 Publisher
+- Notification 타입의 Output
+- 에러를 생성하지 않는 Never 타입의 Failure
+- NotificationCenter를 대체하는 것이 아니라 NotificationCenter에 Publisher를 적용시키는 것을 볼 수 있다.
 
 ### Subscribers
 
