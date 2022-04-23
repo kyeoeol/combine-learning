@@ -10,4 +10,12 @@ Cocoa SDK에는 Target/Action, NotificationCenter, ad-hoc callback과 같은 많
 
 ## Combine
 Combine은 **시간에 따른 값(values) 처리를 위한 통합 선언 API(a unified declarative API)** 이다. <br>
-Combine에서 처리되는 값들은 많은 종류의 비동기 이벤트를 대체할 수 있고 Combine의 이벤트 처리 연산자를
+Combine으로 처리되는 값들은 많은 종류의 비동기 이벤트를 대체할 수 있고 Combine의 이벤트 처리 연산자를 이용해 비동기 이벤트를 다룰 수 있다. <br>
+간단하게 말하자면 Combine은 비동기 이벤트를 처리하기 위한 API라고 할 수 있다.
+
+## Comnine Features
+
+### Generic
+### Type safe
+### Composition first
+### Request-driven
