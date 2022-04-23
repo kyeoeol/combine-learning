@@ -74,7 +74,7 @@ extension NotificationCenter {
 - NotificationCenter를 대체하는 것이 아니라 NotificationCenter에 Publisher를 적용시키는 것을 볼 수 있다.
 
 ### Subscribers
-Publiser의 counterpart인 Subscriber는 Publiser가 finite한 경우 completion 또는 값을 받는다. 
+Publiser의 counterpart인 Subscriber는 Publiser가 finite한 경우 completion 또는 values를 받는다. 
 Subscriber는 일반적으로 값을 받으면 행동하고 상태를 변경하기 때문에 참조 타입을 사용한다.
 
 **Fetures**
@@ -96,7 +96,18 @@ protocol Subscriber {
 - **Failure:** 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
 - **receive(subscription: Subscription):** Publiser로 부터 받은 데이터 flow를 제어할 수 있는 Subscription를 받는다.
 - **receive(_ input: Input):** Input 타입을 받는다.
-- **receive(completion: Subscribers.Completion<Failure>):** 완료(Finished) 또는 실패(Failure)에 대한 completion을 받는다.
+- **receive(completion: Subscribers.Completion<Failure>):** 연결된 Publiser가 finite한 경우 완료(Finished) 또는 실패(Failure)에 대한 completion을 받는다.
+
+**Example**
+```swift
+extension Subscribers {
+    class Assgin<Root, Input>: Subscriber, Cancellable {
+        typealias Failure = Never
+        
+        init(object: Root, keyPath: ReferenceWritableKeyPath<Root, Input)
+    }
+}
+```
 
 ### Operators
 
