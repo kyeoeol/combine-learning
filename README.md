@@ -108,6 +108,8 @@ extension Subscribers {
     }
 }
 ```
+- Input을 받은 뒤 해당 객체의 속성에 기록하는 Subscriber
+- 에러를 처리할 방법이 없기 때문에 Failure 타입을 Never로 설정
 
 ### Operators
 
