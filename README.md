@@ -74,6 +74,27 @@ extension NotificationCenter {
 - NotificationCenter를 대체하는 것이 아니라 NotificationCenter에 Publisher를 적용시키는 것을 볼 수 있다.
 
 ### Subscribers
+Publiser의 counterpart인 Subscriber는 Publiser가 finite한 경우 completion 또는 값을 받는다. 
+Subscriber는 일반적으로 값을 받으면 행동하고 상태를 변경하기 때문에 참조 타입을 사용한다.
+
+**Fetures**
+- Receives values and a completion
+- Reference Type
+
+**Protocol**
+```swift
+protocol Subscriber {
+    associatedtype Iutput
+    associatedtype Failure: Error
+    
+    func receive(subscription: Subscription)
+    func receive(_ input: Input) -> Subscribers.Demand
+    func receive(completion: Subscribers.Completion<Failure>)
+}
+```
+- Iutput: 생성되는 값에 대한 associatedtype
+- Failure: 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
+- Subscription을 
 
 ### Operators
 
