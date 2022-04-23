@@ -34,7 +34,8 @@ Combine은 요청 기반의 API이기 때문에 메모리 사용량과 앱의 �
 
 ## Key Concepts
 ### Publisers
-Publiser는 값과 에러가 생성되는 방식을 설명(describe)하는 Combine의 선언적인 부분(declarative part of Combine's API)이고 이는 실제 Publiser가 값과 에러를 생성하는 것이 아니라는 것을 의미한다.
+Publiser는 값과 에러가 생성되는 방식을 설명(describe)하는 Combine의 선언적인 부분(declarative part of Combine's API)이다. <br>
+이는 실제 Publiser가 값과 에러를 생성하는 것이 아니라는 것을 의미한다.
 
 Here's the protocol
 ```
