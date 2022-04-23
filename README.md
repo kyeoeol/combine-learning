@@ -94,7 +94,7 @@ protocol Subscriber {
 ```
 - **Intput:** 생성되는 값에 대한 associatedtype
 - **Failure:** 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
-- **receive(subscription: Subscription):** Publiser로 부터 받은 데이터 flow를 제어할 수 있는 Subscription를 받는다.
+- **receive(subscription: Subscription):** Publiser로 부터 받는 Subscription로 데이터 flow를 제어할 수 있다.
 - **receive(_ input: Input):** Input 타입을 받는다.
 - **receive(completion: Subscribers.Completion<Failure>):** 연결된 Publiser가 finite한 경우 완료(Finished) 또는 실패(Failure)에 대한 completion을 받는다.
 
@@ -113,3 +113,22 @@ extension Subscribers {
 
 ### Operators
 
+<br>
+
+## How to use Publishers and Subscribers together
+
+### The Pattern
+1. Subscriber가 Publisher와 연결된다.
+<img width="300" src="https://user-images.githubusercontent.com/80438047/164911644-49db17b0-bfbb-4682-8a38-697f8515c64d.png">
+
+2. Publisher는 Subscriber에게 Subscription를 보낸다.
+<img width="300" src="https://user-images.githubusercontent.com/80438047/164912059-5ba58745-235b-4dc9-b090-d0b239f2a6f3.png">
+
+3. Subscriber는 Publisher로 부터 받은 Subscription로 Publisher에게 값 요청을 보낸다.
+<img width="300" src="https://user-images.githubusercontent.com/80438047/164912183-3cf4b99c-4f7d-4493-ab98-50229a746cc3.png">
+
+4. Publisher는 Subscriber에게 값을 보낸다.
+<img width="300" src="https://user-images.githubusercontent.com/80438047/164912391-237d70ce-db17-4012-bea8-1ee7c25ebca6.png">
+
+5. Publiser가 finite된 경우 Completion 또는 Error를 보낸다.
+<img width="300" src="https://user-images.githubusercontent.com/80438047/164912447-cd7d7112-65f4-4126-b828-f101d57fc21e.png">
