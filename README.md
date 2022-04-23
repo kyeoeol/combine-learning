@@ -29,3 +29,29 @@ Combine은 Type safe하기 때문에 런타임이 아닌 컴파일 시간에 에
 
 ### Request-driven
 Combine은 요청 기반의 API이기 때문에 메모리 사용량과 앱의 성능을 신중하게 관리할 수 있다.
+
+<br>
+
+## Key Concepts
+### Publisers
+Publiser는 값과 에러가 생성되는 방식을 설명(describe)하는 Combine의 선언적인 부분(declarative part of Combine's API)이고 이는 실제 Publiser가 값과 에러를 생성하는 것이 아니라는 것을 의미한다.
+
+Here's the protocol
+```
+protocol Publiser {
+    associatedtype Output
+    associatedtype Failure: Error
+
+    func subscribe<S: Subscriber>(_ subscriber: S) {
+        where S.Input == Output, S.Failure == Failure
+    }
+}
+```
+- Output: 생성되는 값에 대한 associatedtype
+- Failure: 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
+- subscribe: Publiser의 핵심 기능, subscriber의 Input과 Publiser의 Output이 일치해야 하고 각각의 Failure도 일치해야 한다.
+
+### Subscribers
+
+### Operators
+
