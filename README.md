@@ -53,9 +53,9 @@ protocol Publiser {
     }
 }
 ```
-- Output: 생성되는 값에 대한 associatedtype
-- Failure: 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
-- subscribe: Publiser의 핵심 기능, subscriber의 Input과 Publiser의 Output이 일치해야 하고 각각의 Failure도 일치해야 한다.
+- **Output:** 생성되는 값에 대한 associatedtype
+- **Failure:** 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
+- **subscribe:** Publiser의 핵심 기능, subscriber의 Input과 Publiser의 Output이 일치해야 하고 각각의 Failure도 일치해야 한다.
 
 **Example**
 ```swift
@@ -92,9 +92,11 @@ protocol Subscriber {
     func receive(completion: Subscribers.Completion<Failure>)
 }
 ```
-- Iutput: 생성되는 값에 대한 associatedtype
-- Failure: 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
-- Subscription을 
+- **Intput:** 생성되는 값에 대한 associatedtype
+- **Failure:** 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
+- **receive(subscription: Subscription):** Publiser로 부터 받은 데이터 flow를 제어할 수 있는 Subscription를 받는다.
+- **receive(_ input: Input):** Input 타입을 받는다.
+- **receive(completion: Subscribers.Completion<Failure>):** 완료(Finished) 또는 실패(Failure)에 대한 completion을 받는다.
 
 ### Operators
 
