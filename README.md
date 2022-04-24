@@ -107,6 +107,8 @@ protocol Subscriber {
 ### Operators
 Operators are Publishers until they adopt the Publisher protocol.
 
+예를 들어, grade라는 Int 타입을 가진 객체를 Output의 타입으로 가지는 Publisher과 Input 타입이 Int인 Subscriber를 서로 연결하려고 하는 경우 타입이 일치하지 않는 다는 에러가 발생하는데 이때 Operator를 사용해 타입을 일치시킴으로써 에러를 해결할 수 있다.
+
 **Fetures**
 - Adopts Publisher
 - Describe a behavior for changing values
