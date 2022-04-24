@@ -140,5 +140,7 @@ Operators are Publishers until they adopt the Publisher protocol.
 <br>
 <br>
 
-cf.
+****
+
+cf. <br>
 https://developer.apple.com/videos/play/wwdc2019/722/?time=832
