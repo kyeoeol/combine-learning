@@ -57,22 +57,6 @@ protocol Publiser {
 - **Failure:** 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
 - **subscribe:** Publiser의 핵심 기능, subscriber의 Input과 Publiser의 Output이 일치해야 하고 각각의 Failure도 일치해야 한다.
 
-**Example**
-```swift
-extension NotificationCenter {
-    struct Publisher: Combine.Publisher {
-        typealias Output = Notification
-        typealias Failure = Never
-        
-        init(center: NotificationCenter, name: Notification.Name, object: Any? = nil)
-    }
-}
-```
-- struct로 사용된 Publisher
-- Notification 타입의 Output
-- 에러를 생성하지 않는 Never 타입의 Failure
-- NotificationCenter를 대체하는 것이 아니라 NotificationCenter에 Publisher를 적용시키는 것을 볼 수 있다.
-
 ### Subscribers
 Publiser의 counterpart인 Subscriber는 Publiser가 finite한 경우 completion 또는 values를 받는다. 
 Subscriber는 일반적으로 값을 받으면 행동하고 상태를 변경하기 때문에 참조 타입을 사용한다.
@@ -98,19 +82,6 @@ protocol Subscriber {
 - **receive(_ input: Input):** Input 타입을 받는다.
 - **receive(completion: Subscribers.Completion<Failure>):** 연결된 Publiser가 finite한 경우 완료(Finished) 또는 실패(Failure)에 대한 completion을 받는다.
 
-**Example**
-```swift
-extension Subscribers {
-    class Assgin<Root, Input>: Subscriber, Cancellable {
-        typealias Failure = Never
-        
-        init(object: Root, keyPath: ReferenceWritableKeyPath<Root, Input>)
-    }
-}
-```
-- Input을 받은 뒤 해당 객체의 속성에 기록하는 Subscriber
-- 에러를 처리할 방법이 없기 때문에 Failure 타입을 Never로 설정
-
 <br>
 
 ### The Pattern - How to use Publishers and Subscribers together
@@ -134,3 +105,11 @@ extension Subscribers {
 <br>
 
 ### Operators
+Operators are Publishers until they adopt the Publisher protocol.
+
+**Fetures**
+- Adopts Publisher
+- Describe a behavior for changing values
+- Subscribe to a Publisher ("upstream")
+- Subscribe to a Subscriber ("downstream")
+- Value Type
