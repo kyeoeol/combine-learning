@@ -136,4 +136,5 @@ Operators are Publishers until they adopt the Publisher protocol.
 
 <img width="400" src="https://user-images.githubusercontent.com/80438047/164982420-3c743756-ecfd-48b1-9489-d553c61c5508.png">
 
-예를 들어, Swift에서 단일 정수값을 동기적으로 나타내야 하는 경우 Int를 사용하면 되고 많은 값을 나타내려면 Array를 사용하면 되는데 Combine을 이용해 비동기적으로 나타내야 하는 경우 각각 Future와 Publisher로 표현할 수 있다. 따라서 어떤 Operator를 찾고 싶을 때 이미 Array에서 사용되고 있는 Operator의 이름을 Publisher에 적용시키면 원하는 Operator를 찾을 수 있다.
+예를 들어, Swift에서 단일 정수값을 동기적으로 나타내야 하는 경우 Int를 사용하면 되고 많은 값을 나타내려면 Array를 사용하면 되는데 Combine을 이용해 비동기적으로 나타내야 하는 경우 각각 Future와 Publisher로 표현할 수 있다. <br>
+따라서 어떤 Operator를 찾고 싶을 때 이미 Array에서 사용되고 있는 Operator의 이름을 Publisher에 적용시키면 원하는 Operator를 찾을 수 있다.
