@@ -57,6 +57,8 @@ protocol Publiser {
 - **Failure:** 생성되는 에러에 대한 associatedtype, 에러를 생성할 수 없는 경우 Never 타입으로 처리한다.
 - **subscribe:** Publiser의 핵심 기능, subscriber의 Input과 Publiser의 Output이 일치해야 하고 각각의 Failure도 일치해야 한다.
 
+<br>
+
 ### Subscribers
 Publiser의 counterpart인 Subscriber는 Publiser가 finite한 경우 completion 또는 values를 받는다. 
 Subscriber는 일반적으로 값을 받으면 행동하고 상태를 변경하기 때문에 참조 타입을 사용한다.
@@ -129,3 +131,8 @@ Operators are Publishers until they adopt the Publisher protocol.
 - Scheduling and time
 
 <img width="600" src="https://user-images.githubusercontent.com/80438047/164981674-2973db49-f842-4c31-b383-66fa1de92a53.png">
+
+**Apple은 수많은 Operator를 탐색하는 데 도움이 되도록 Swift Collection API에서 이미 사용되고 있는 이름을 참고해 Operator의 이름을 지었다.**
+
+**Example**
+<img width="400" src="https://user-images.githubusercontent.com/80438047/164982420-3c743756-ecfd-48b1-9489-d553c61c5508.png">
