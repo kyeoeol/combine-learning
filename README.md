@@ -119,7 +119,8 @@ Operators are Publishers until they adopt the Publisher protocol.
 - Subscribe to a Subscriber ("downstream")
 - Value Type
 
-**Combine에는 Declarative Operator API 라고 불리는 정말 많은 Operator가 있다.**
+**Combine에는 Declarative Operator API 라고 불리는 정말 많은 Operator가 있다.** <br>
+
 **Declarative Operator API**
 - Functional transformations
 - List Operations
