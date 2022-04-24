@@ -132,4 +132,4 @@ Operators are Publishers until they adopt the Publisher protocol.
 
 <img width="600" src="https://user-images.githubusercontent.com/80438047/164981674-2973db49-f842-4c31-b383-66fa1de92a53.png">
 
-**Apple은 수많은 Operator를 탐색하는 데 도움이 되도록 Swift Collection API에서 이미 사용되고 있는 이름()을 참고해 Operator의 이름을 지었다.**
+**Apple은 수많은 Operator를 탐색하는 데 도움이 되도록 Swift Collection API에서 이미 사용되고 있는 이름을 참고해 Operator의 이름을 지었다.(ex: map, compactMap, filter)**
