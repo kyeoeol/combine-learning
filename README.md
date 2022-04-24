@@ -15,7 +15,7 @@ Combine으로 처리되는 값들은 많은 종류의 비동기 이벤트를 대
 
 <br>
 
-## Comnine Features
+## Combine Features
 ### Generic
 Combine은 Swift용으로 작성되었는데 Generics과 같은 Swift의 기능을 활용할 수 있다는 걸 의미한다. <br>
 Generics을 사용하면 작성해야 하는 코드의 양을 줄일 수 있고 한 번 작성된 비동기 동작에 대한 알고리즘을 다른 종류의 비동기 API에서 사용할 수 있다.
@@ -134,3 +134,11 @@ Operators are Publishers until they adopt the Publisher protocol.
 
 **Apple은 수많은 Operator를 탐색하는 데 도움이 되도록 Swift Collection API에서 이미 사용되고 있는 이름을 참고해 Operator의 이름을 지었다. <br>
 (ex: map, compactMap, filter)**
+
+<br>
+<br>
+<br>
+<br>
+
+cf.
+https://developer.apple.com/videos/play/wwdc2019/722/?time=832
