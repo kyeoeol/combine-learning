@@ -111,13 +111,10 @@ extension Subscribers {
 - Input을 받은 뒤 해당 객체의 속성에 기록하는 Subscriber
 - 에러를 처리할 방법이 없기 때문에 Failure 타입을 Never로 설정
 
-### Operators
-
 <br>
 
-## How to use Publishers and Subscribers together
-
-### The Pattern
+#### How to use Publishers and Subscribers together
+#### The Pattern
 1. Subscriber가 Publisher와 연결된다.
 <img width="300" src="https://user-images.githubusercontent.com/80438047/164911644-49db17b0-bfbb-4682-8a38-697f8515c64d.png">
 
@@ -134,3 +131,7 @@ extension Subscribers {
 <img width="300" src="https://user-images.githubusercontent.com/80438047/164912447-cd7d7112-65f4-4126-b828-f101d57fc21e.png">
 
 **하나의 Subscription으로 0개 또는 그 이상의 값을 받고 하나의 Completion으로 완료된다.**
+
+<br>
+
+### Operators
