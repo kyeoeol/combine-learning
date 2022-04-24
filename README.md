@@ -113,8 +113,8 @@ extension Subscribers {
 
 <br>
 
-#### How to use Publishers and Subscribers together
-#### The Pattern
+### How to use Publishers and Subscribers together
+### The Pattern
 1. Subscriber가 Publisher와 연결된다.
 <img width="300" src="https://user-images.githubusercontent.com/80438047/164911644-49db17b0-bfbb-4682-8a38-697f8515c64d.png">
 
