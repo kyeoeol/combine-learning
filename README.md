@@ -104,7 +104,7 @@ extension Subscribers {
     class Assgin<Root, Input>: Subscriber, Cancellable {
         typealias Failure = Never
         
-        init(object: Root, keyPath: ReferenceWritableKeyPath<Root, Input)
+        init(object: Root, keyPath: ReferenceWritableKeyPath<Root, Input>)
     }
 }
 ```
