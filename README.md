@@ -120,5 +120,11 @@ Operators are Publishers until they adopt the Publisher protocol.
 - Value Type
 
 **Combine에는 Declarative Operator API 라고 불리는 정말 많은 Operator가 있다.**
+**Declarative Operator API**
+- Functional transformations
+- List Operations
+- Error Handling
+- Thread or queue movement
+- Scheduling and time
 
 <img width="600" src="https://user-images.githubusercontent.com/80438047/164981674-2973db49-f842-4c31-b383-66fa1de92a53.png">
