@@ -18,6 +18,7 @@
 		85CFBAFB2819741B0059E9A3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFBAFA2819741B0059E9A3 /* Constant.swift */; };
 		85CFBAFD281977720059E9A3 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFBAFC281977720059E9A3 /* Decode.swift */; };
 		85CFBAFF281979240059E9A3 /* CoronaCenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFBAFE281979240059E9A3 /* CoronaCenterViewModel.swift */; };
+		85CFBB0128197F090059E9A3 /* CoronaCenterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFBB0028197F090059E9A3 /* CoronaCenterItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		85CFBAFA2819741B0059E9A3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		85CFBAFC281977720059E9A3 /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		85CFBAFE281979240059E9A3 /* CoronaCenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaCenterViewModel.swift; sourceTree = "<group>"; };
+		85CFBB0028197F090059E9A3 /* CoronaCenterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaCenterItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				85CFBAE028196FD80059E9A3 /* ContentView.swift */,
+				85CFBB0028197F090059E9A3 /* CoronaCenterItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				85CFBAFD281977720059E9A3 /* Decode.swift in Sources */,
 				85CFBAFF281979240059E9A3 /* CoronaCenterViewModel.swift in Sources */,
 				85CFBAE128196FD80059E9A3 /* ContentView.swift in Sources */,
+				85CFBB0128197F090059E9A3 /* CoronaCenterItemView.swift in Sources */,
 				85CFBAF0281970400059E9A3 /* CoronaCenterModel.swift in Sources */,
 				85CFBADF28196FD80059E9A3 /* CombinedCoronaCenterApp.swift in Sources */,
 				85CFBAF6281971330059E9A3 /* CoronaCenterFetcher.swift in Sources */,

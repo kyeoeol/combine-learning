@@ -10,11 +10,23 @@ import SwiftUI
 struct ContentView: View {
     // MARK: - PROPERTIES
     
+    @ObservedObject var viewModel: CoronaCenterViewModel
+   
     // MARK: - BODY
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(viewModel.coronaCenters) { center in
+                    CoronaCenterItemView(center: center)
+                        .padding(.horizontal)
+                }
+            } //: ScrollView
+            .navigationTitle("코로나 19 센터 리스트")
+        } //: NavigationView
+        .onAppear {
+            viewModel.fetchCoronaCenter()
+        }
     }
 }
 
@@ -22,6 +34,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: CoronaCenterViewModel())
     }
 }

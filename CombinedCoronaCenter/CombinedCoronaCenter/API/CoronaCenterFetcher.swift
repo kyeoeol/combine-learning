@@ -26,10 +26,10 @@ class CoronaCenterFetcher {
 
 extension CoronaCenterFetcher: CoronaCenterFetchable {
     func coronaCenter() -> AnyPublisher<CoronaCenterResponse, CoronaError> {
-        return findCenter(with: makeCoronaCenterComponents())
+        return center(with: makeCoronaCenterComponents())
     }
     
-    private func findCenter<T>(
+    private func center<T>(
         with components: URLComponents
     ) -> AnyPublisher<T, CoronaError> where T: Decodable {
         guard let url = components.url else {
@@ -65,7 +65,7 @@ private extension CoronaCenterFetcher {
         components.path = CoronaCenterAPI.path
         
         components.queryItems = [
-            URLQueryItem(name: "perPage", value: "30")
+            URLQueryItem(name: "perPage", value: "10")
         ]
         
         return components
