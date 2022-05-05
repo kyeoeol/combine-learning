@@ -1,4 +1,5 @@
 # <a href="https://developer.apple.com/documentation/combine/publisher/zip(_:_:)-8d7k7">Zip( _ : _ : _ : )</a>
+
 - **Zip**을 사옹해 최대 세 개의 Publisher를 결합할 수 있다.
 - **Zip**은 결합된 Publishser들의 요소로 이루어진 tuple을 downstream에 publish하는 **새로운 Publishser를 반환한다.**
 - 새로운 Publishser는 결합된 Publisher들이 모두 이벤트를 내보낼 때까지 기다렸다가, 
