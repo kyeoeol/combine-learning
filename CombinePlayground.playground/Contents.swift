@@ -40,3 +40,27 @@ let blogPost = BlogPost(
 NotificationCenter.default.post(name: .newBlogPost, object: blogPost)
 
 print("Last post is:", lastPostLabel.text ?? "") // --> Last post is: The Foundation framework and Combine
+
+
+
+
+// MARK: - @Published usage to bind values to changes
+
+final class FormViewController: UIViewController {
+    
+    @Published var isSubmitAllowed: Bool = false
+    
+    @IBOutlet private weak var acceptTermsSwitch: UISwitch!
+    @IBOutlet private weak var submitButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        $isSubmitAllowed
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isEnabled, on: submitButton)
+    }
+    
+    @IBAction func didSwitch(_ sender: UISwitch) {
+        isSubmitAllowed = sender.isOn
+    }
+}
