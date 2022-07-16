@@ -18,9 +18,9 @@ let blogPostPublisher = NotificationCenter.Publisher(
     name: .newBlogPost,
     object: nil
 )
-.map { notification -> String? in
-    return (notification.object as? BlogPost)?.title
-}
+    .map { notification -> String? in
+        return (notification.object as? BlogPost)?.title
+    }
 
 let lastPostLabel = UILabel()
 blogPostPublisher.assign(to: \.text, on: lastPostLabel)
@@ -46,21 +46,31 @@ print("Last post is:", lastPostLabel.text ?? "") // --> Last post is: The Founda
 
 // MARK: - @Published usage to bind values to changes
 
+final class FormViewModel {
+    @Published var isSubmitAllowed = false
+}
+
 final class FormViewController: UIViewController {
     
-    @Published var isSubmitAllowed: Bool = false
+//    @Published var isSubmitAllowed: Bool = false
+//    private var subscribers: [AnyCancellable] = []
+    private var switchSubscriber: AnyCancellable?
+    private var viewModel = FormViewModel()
     
     @IBOutlet private weak var acceptTermsSwitch: UISwitch!
     @IBOutlet private weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        $isSubmitAllowed
+        
+        // save the cancellable subscription
+//        $isSubmitAllowed
+        switchSubscriber =  viewModel.$isSubmitAllowed
             .receive(on: DispatchQueue.main)
             .assign(to: \.isEnabled, on: submitButton)
     }
     
     @IBAction func didSwitch(_ sender: UISwitch) {
-        isSubmitAllowed = sender.isOn
+        viewModel.isSubmitAllowed = sender.isOn
     }
 }
