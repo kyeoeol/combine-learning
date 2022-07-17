@@ -74,3 +74,49 @@ final class FormViewController: UIViewController {
         viewModel.isSubmitAllowed = sender.isOn
     }
 }
+
+
+
+
+// MARK: - Make Subscriber
+
+class StringSubscriber: Subscriber {
+    
+    typealias Input = String
+    typealias Failure = Never
+    
+    func receive(subscription: Subscription) {
+        subscription.request(.max(3))
+    }
+    
+    func receive(_ input: String) -> Subscribers.Demand {
+        print("--->Input:", input)
+        return .none
+    }
+    
+    func receive(completion: Subscribers.Completion<Never>) {
+        
+    }
+    
+}
+
+//let publisherSub: PassthroughSubject<String, Never> = .init()
+let publisherArr = ["A","B","C","D","E","F"].publisher
+
+let subscriber: StringSubscriber = .init()
+
+publisherArr
+    .subscribe(subscriber)
+
+//publisherSub.send("A")
+//publisherSub.send("B")
+//publisherSub.send("C")
+//publisherSub.send("D")
+
+
+
+
+// MARK: - Type Eraser
+// eraseToAnyPublisher()
+
+let publisher = PassthroughSubject<Int, Never>().eraseToAnyPublisher()
