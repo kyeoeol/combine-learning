@@ -15,7 +15,7 @@
 
 ### Transforming Operators
 - <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-collect(_:)">collect(_:)</a>
-- - <a href="">map(_:)</a>
+- <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-map(_:)">map(_:)</a>
 
 ### Filtering Operators
 - <a href=""></a>
