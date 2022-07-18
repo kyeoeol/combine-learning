@@ -22,7 +22,7 @@
 - <a href="https://developer.apple.com/documentation/combine/future/flatmap(maxpublishers:_:)-61pe1">flatMap(maxPublishers:_:)</a>
 - <a href="https://developer.apple.com/documentation/combine/just/replacenil(with:)">replaceNil(with:)</a>
 - <a href="https://developer.apple.com/documentation/combine/publisher/replaceempty(with:)">replaceEmpty(with:)</a>
-- <a href="https://developer.apple.com/documentation/combine/publisher/scan(_:_:)">scan(_:_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/scan(_:_:)">scan(_: _:)</a>
 
 <br>
 
