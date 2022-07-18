@@ -19,6 +19,7 @@
 - <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-collect(_:)">collect(_:)</a>
 - <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-map(_:)">map(_:)</a>
 - <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-map(_:)-&-KeyPath">map(_:) & KeyPath</a>
+- <a href="">flatMap(maxPublishers:_:)</a>
 
 <br>
 
