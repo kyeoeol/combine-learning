@@ -16,11 +16,13 @@
 ## Operator
 
 ### <a href="https://github.com/kyeoeol/combine-learning/blob/main/CombineTransformingOperators.playground/Contents.swift">Transforming Operators</a>
-- <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-collect(_:)">collect(_:)</a>
-- <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-map(_:)">map(_:)</a>
-- <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-map(_:)-&-KeyPath">map(_:) & KeyPath</a>
-- <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BTransforming-Operator%5D-flatMap(maxPublishers:_:)">flatMap(maxPublishers:_:)</a>
-- <a href="">replaceNil(with:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/collect(_:)">collect(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/map(_:)-99evh">map(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/map(_:)-6sm0a">map(_:) & KeyPath</a>
+- <a href="https://developer.apple.com/documentation/combine/future/flatmap(maxpublishers:_:)-61pe1">flatMap(maxPublishers:_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/just/replacenil(with:)">replaceNil(with:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/replaceempty(with:)">replaceEmpty(with:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/scan(_:_:)">scan(_:_:)</a>
 
 <br>
 
@@ -31,7 +33,6 @@
 
 ### Combining Operators
 - <a href=""></a>
-- <a href="https://github.com/kyeoeol/combine-learning/wiki/%5BOperator%5D-Zip">Zip</a>
 
 <br>
 
