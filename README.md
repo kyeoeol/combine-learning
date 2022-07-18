@@ -14,7 +14,7 @@
 ## Operator
 
 ### Transforming Operators
-- <a href=""></a>
+- <a href="">collect(_:)</a>
 
 ### Filtering Operators
 - <a href=""></a>
