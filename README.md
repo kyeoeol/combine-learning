@@ -31,6 +31,12 @@
 - <a href="https://developer.apple.com/documentation/combine/fail/removeduplicates()">removeDuplicates()</a>
 - <a href="https://developer.apple.com/documentation/combine/publisher/compactmap(_:)">compactMap(_:)</a>
 - <a href="https://developer.apple.com/documentation/combine/fail/ignoreoutput()">ignoreOutput()</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/first()">first()</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/last()">last()</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/dropfirst(_:)">dropFirst(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/drop(while:)">drop(while:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/drop(untiloutputfrom:)">drop(untilOutputFrom:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/prefix(_:)">prefix(_:)</a>
 
 <br>
 
