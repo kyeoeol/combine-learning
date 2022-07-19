@@ -5,6 +5,8 @@ import Combine
 
 // 1. filter
 
+print("-------------filter--------------")
+
 let numbers = (1...20).publisher
 
 numbers
@@ -14,7 +16,10 @@ numbers
     }
 
 
+
 // 2. removeDuplicates
+
+print("-------------removeDuplicates--------------")
 
 let words = "apple apple apple fruit fruit apple apple mango watermelon apple".components(separatedBy: " ").publisher
 
@@ -27,6 +32,8 @@ words
 
 // 3. compactMap
 
+print("-------------compactMap--------------")
+
 let strings = ["a", "1.24", "b", "3.45", "6.7"].publisher
 
 strings
@@ -38,6 +45,8 @@ strings
 
 // 4. ignoreOutput
 
+print("-------------ignoreOutput--------------")
+
 let numbers2 = (1...5000).publisher
 
 numbers2
@@ -48,3 +57,99 @@ numbers2
         print($0)
     }
 
+
+// 5. first
+
+print("-------------first--------------")
+
+let numbers3 = (1...9).publisher
+
+numbers3
+    .first { $0 % 2 == 0 }
+    .sink {
+        print($0)
+    }
+
+
+// 6. last
+
+print("-------------last--------------")
+
+let numbers4 = (1...9).publisher
+
+numbers4
+    .last { $0 % 2 == 0 }
+    .sink {
+        print($0)
+    }
+
+
+// 7. dropFirst
+
+print("-------------dropFirst--------------")
+
+let numbers5 = (1...10).publisher
+
+numbers5
+    .dropFirst(3)
+    .sink {
+        print($0)
+    }
+
+
+// 8. dropWhile
+
+print("-------------dropWhile--------------")
+
+let numbers6 = (1...10).publisher
+
+numbers6
+    .drop(while: {
+        $0 % 3 != 0
+    })
+    .sink {
+        print($0)
+    }
+
+
+// 9. dropUntilOutputFrom
+
+print("-------------.dropUntilOutputFrom--------------")
+
+let isReady: PassthroughSubject<Void, Never> = .init()
+let taps: PassthroughSubject<Int, Never> = .init()
+
+taps
+    .drop(untilOutputFrom: isReady)
+    .sink {
+        print($0)
+    }
+
+(1...10).forEach {
+    taps.send($0)
+    
+    if $0 == 5 {
+        isReady.send(())
+    }
+}
+
+
+// 10. prefix
+
+print("-------------prefix--------------")
+
+let numbers7 = (1...10).publisher
+
+numbers7
+    .prefix(3)
+    .sink {
+        print($0)
+    }
+
+print("-------------prefix while--------------")
+
+numbers7
+    .prefix { $0 < 5 }
+    .sink {
+        print($0)
+    }
