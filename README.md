@@ -26,7 +26,7 @@
 
 <br>
 
-### Filtering Operators
+### <a href="https://github.com/kyeoeol/combine-learning/blob/main/CombineFilteringOperators.playground/Contents.swift">Filtering Operators</a>
 - <a href="https://developer.apple.com/documentation/combine/publisher/filter(_:)">filter(_:)</a>
 - <a href="https://developer.apple.com/documentation/combine/fail/removeduplicates()">removeDuplicates()</a>
 - <a href="https://developer.apple.com/documentation/combine/publisher/compactmap(_:)">compactMap(_:)</a>
