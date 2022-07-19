@@ -27,7 +27,10 @@
 <br>
 
 ### Filtering Operators
-- <a href=""></a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/filter(_:)">filter(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/removeduplicates()">removeDuplicates()</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/compactmap(_:)">compactMap(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/ignoreoutput()">ignoreOutput()</a>
 
 <br>
 
