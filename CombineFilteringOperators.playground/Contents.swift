@@ -153,3 +153,30 @@ numbers7
     .sink {
         print($0)
     }
+
+
+// Challenge 1. Filter all the things
+/*
+ Challenge: Filter all the things
+
+ Create an example that publishes a collection of numbers from 1 through 100, and use filtering operators to:
+
+ 1. Skip the first 50 values emitted by the upstream publisher.
+ 2. Take the next 20 values after those first 50 values.
+ 3. Only take even numbers.
+
+ The output of your example should produce the following numbers, one per line:
+ 52 54 56 58 60 62 64 66 68 70
+ */
+
+print("-------------Filter all the things--------------")
+
+let cNumbers = (1...100).publisher
+
+cNumbers
+    .dropFirst(50)
+    .prefix(20)
+    .filter { $0 % 2 == 0 }
+    .sink {
+        print($0)
+    }
