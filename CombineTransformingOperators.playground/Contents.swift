@@ -1,9 +1,12 @@
 import UIKit
 import Combine
 
+
 // MARK: - Transforming Operators
 
 // 1. Collect
+
+print("-------------Collect--------------")
 
 ["A", "B", "C", "D", "E"].publisher
     .collect(2)
@@ -13,6 +16,8 @@ import Combine
 
 
 // 2. map
+
+print("-------------map--------------")
 
 let formatter: NumberFormatter = .init()
 formatter.numberStyle = .spellOut
@@ -27,6 +32,8 @@ formatter.numberStyle = .spellOut
 
 
 // 3. map KeyPath
+
+print("-------------map KeyPath--------------")
 
 struct MyPoint {
     let x: Int
@@ -45,6 +52,8 @@ publisher.send(MyPoint(x: 12, y: 10))
 
 
 // 4. flatMap
+
+print("-------------flatMap--------------")
 
 struct School {
     let name: String
@@ -78,6 +87,8 @@ townSchool.numOfStudents.value += 10
 
 // 5. replaceNil
 
+print("-------------replaceNil--------------")
+
 ["A", "B", nil ,"C"].publisher
     .replaceNil(with: "*")
     .map { $0! }
@@ -87,6 +98,8 @@ townSchool.numOfStudents.value += 10
 
 
 // 6. replaceEmpty
+
+print("-------------replaceEmpty--------------")
 
 let empty: Empty<Int, Never> = .init()
 
@@ -100,6 +113,8 @@ empty
 
 
 // 7. scan
+
+print("-------------scan--------------")
 
 let publisher2 = (1...10).publisher
 
