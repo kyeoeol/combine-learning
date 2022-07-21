@@ -43,6 +43,8 @@
 ### <a href="https://github.com/kyeoeol/combine-learning/blob/main/CombineCombiningOperators.playground/Contents.swift">Combining Operators</a>
 - <a href="https://developer.apple.com/documentation/combine/publisher/prepend(_:)-v9sb">prepend(_:)</a>
 - <a href="https://developer.apple.com/documentation/combine/publisher/append(_:)-5yh02">append(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/switchtolatest()-453ht">switchToLatest()</a>
+- <a href=""></a>
 - <a href=""></a>
 
 <br>
