@@ -36,3 +36,73 @@ numbers2
     .sink {
         print($0)
     }
+
+
+// 3. switchToLatest
+
+print("-------------switchToLatest--------------")
+
+let publisher31 = PassthroughSubject<String, Never>()
+let publisher32 = PassthroughSubject<String, Never>()
+
+let publishers = PassthroughSubject<PassthroughSubject<String, Never>, Never>()
+
+publishers
+    .switchToLatest()
+    .sink {
+        print($0)
+    }
+
+publishers.send(publisher31)
+
+publisher31.send("publisher31 - value1")
+publisher31.send("publisher31 - value2")
+
+publishers.send(publisher32) // swithing to publisher32
+
+publisher32.send("publisher32 - value1")
+
+publisher31.send("publisher31 - value3")
+
+print("-------------switchToLatest continue--------------")
+
+let images = ["houston", "denver", "seattle"]
+var index = 0
+
+func getString() -> AnyPublisher<String?, Never> {
+    return Future<String?, Never> { promise in
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+            promise(.success(images[index]))
+        }
+    }
+    .print()
+    .receive(on: RunLoop.main)
+    .eraseToAnyPublisher()
+}
+
+let taps = PassthroughSubject<Void, Never>()
+
+let subscription = taps
+    .print()
+    .map { _ in
+        getString()
+    }
+    .switchToLatest()
+    .sink {
+        print($0)
+    }
+
+// houston
+taps.send()
+
+// denver
+DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+    index += 1
+    taps.send()
+}
+
+// seattle
+DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
+    index += 1
+    taps.send()
+}
