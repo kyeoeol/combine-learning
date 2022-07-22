@@ -46,7 +46,7 @@
 - <a href="https://developer.apple.com/documentation/combine/publisher/switchtolatest()-453ht">switchToLatest()</a>
 - <a href="https://developer.apple.com/documentation/combine/fail/merge(with:_:)">merge(with:_:)</a>
 - <a href="https://developer.apple.com/documentation/combine/just/combinelatest(_:)">combineLatest(_:)</a>
-- <a href="https://developer.apple.com/documentation/combine/publisher/zip(_:_:)-8d7k7">zip(_:_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/publisher/zip(_:_:)-8d7k7">zip(_: _:)</a>
 
 <br>
 
