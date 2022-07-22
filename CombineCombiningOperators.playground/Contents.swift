@@ -66,43 +66,108 @@ publisher31.send("publisher31 - value3")
 
 print("-------------switchToLatest continue--------------")
 
-let images = ["houston", "denver", "seattle"]
-var index = 0
+//let images = ["houston", "denver", "seattle"]
+//var index = 0
+//
+//func getString() -> AnyPublisher<String?, Never> {
+//    return Future<String?, Never> { promise in
+//        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+//            promise(.success(images[index]))
+//        }
+//    }
+//    .print()
+//    .receive(on: RunLoop.main)
+//    .eraseToAnyPublisher()
+//}
+//
+//let taps = PassthroughSubject<Void, Never>()
+//
+//let subscription = taps
+//    .print()
+//    .map { _ in
+//        getString()
+//    }
+//    .switchToLatest()
+//    .sink {
+//        print($0)
+//    }
+//
+//// houston
+//taps.send()
+//
+//// denver
+//DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+//    index += 1
+//    taps.send()
+//}
+//
+//// seattle
+//DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
+//    index += 1
+//    taps.send()
+//}
 
-func getString() -> AnyPublisher<String?, Never> {
-    return Future<String?, Never> { promise in
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
-            promise(.success(images[index]))
-        }
-    }
-    .print()
-    .receive(on: RunLoop.main)
-    .eraseToAnyPublisher()
-}
 
-let taps = PassthroughSubject<Void, Never>()
+// 4. merge
 
-let subscription = taps
-    .print()
-    .map { _ in
-        getString()
-    }
-    .switchToLatest()
+print("-------------merge--------------")
+
+let publisher41 = PassthroughSubject<Int, Never>()
+let publisher42 = PassthroughSubject<Int, Never>()
+
+
+publisher41
+    .merge(with: publisher42)
     .sink {
         print($0)
     }
 
-// houston
-taps.send()
+publisher41.send(10)
+publisher41.send(11)
 
-// denver
-DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
-    index += 1
-    taps.send()
-}
+publisher42.send(12)
+publisher42.send(13)
 
-// seattle
-DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
-    index += 1
-    taps.send()
-}
+
+// 5. combineLatest
+
+print("-------------combineLatest--------------")
+
+let publisher51 = PassthroughSubject<Int, Never>()
+let publisher52 = PassthroughSubject<String, Never>()
+
+publisher51
+    .combineLatest(publisher52)
+    .sink {
+        print("P1: \($0), P:2 \($1)")
+    }
+
+publisher51.send(1)
+publisher52.send("A")
+publisher51.send(2)
+
+publisher52.send("B")
+publisher51.send(3)
+
+
+// 6. zip
+
+print("-------------zip--------------")
+
+let publisher61 = PassthroughSubject<Int, Never>()
+let publisher62 = PassthroughSubject<String, Never>()
+
+publisher61
+    .zip(publisher62)
+    .sink {
+        print("P1: \($0), P:2 \($1)")
+    }
+
+publisher61.send(1)
+publisher62.send("A")
+publisher61.send(2)
+publisher61.send(3)
+publisher61.send(4)
+
+publisher62.send("B")
+publisher61.send(5)
