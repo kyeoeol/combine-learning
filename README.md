@@ -53,10 +53,10 @@
 ### <a href="https://github.com/kyeoeol/combine-learning/blob/main/CombineSequenceOperators.playground/Contents.swift">Sequence Operators</a>
 - <a href="https://developer.apple.com/documentation/combine/fail/max()">max()</a>
 - <a href="https://developer.apple.com/documentation/combine/fail/min()">min()</a>
-- <a href=""></a>
-- <a href=""></a>
-- <a href=""></a>
-- <a href=""></a>
-- <a href=""></a>
-- <a href=""></a>
-- <a href=""></a>
+- <a href="https://developer.apple.com/documentation/combine/fail/first()">first()</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/last()">last()</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/output(at:)">output(at:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/count()">count()</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/contains(_:)">contains(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/allsatisfy(_:)">allSatisfy(_:)</a>
+- <a href="https://developer.apple.com/documentation/combine/fail/reduce(_:_:)">reduce(_: _:)</a>
