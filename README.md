@@ -9,7 +9,7 @@
 ## Wiki
 - <a href="https://github.com/kyeoeol/combine-learning/wiki/Introducing-Combine">Introducing Combine</a>
 - <a href="https://github.com/kyeoeol/combine-learning/wiki/Getting-Started-with-the-Combine-framework-in-Swift">Getting Started with the Combine framework in Swift</a>
-- <a href="https://github.com/kyeoeol/combine-learning/wiki/RunLoop.main-vs-DispatchQueue.main:-The-differences-explained">RunLoop.main vs DispatchQueue.main: The differences explained</a>
+- <a href="https://www.avanderlee.com/combine/runloop-main-vs-dispatchqueue-main/">RunLoop.main vs DispatchQueue.main: The differences explained</a>
 
 <br>
 <br>
